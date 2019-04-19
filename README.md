@@ -7,4 +7,16 @@
 VGG16, Annoy
 
 ## **手順**
-コードを見ればわかるがVGG16の中間層を特徴量抽出して、ベクトルとして利用しAnnoyに食わせただけ。結構お手軽に実装できる。
+ramen_images.zipを解凍後 ramen_images というファイルを作成しそこに格納。
+
+その後以下を実行してAnnoyのmodelを作成し保存
+
+```
+python main.py
+```
+
+search.py で実際にAnnoyModelを利用して検索を行なっているので、検索したいファイルをpathで指定することで色々遊ぶことができる。
+
+```
+python search.py
+```
