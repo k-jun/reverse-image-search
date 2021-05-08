@@ -10,9 +10,9 @@ from keras.models import Model
 # !pip install annoy
 from annoy import AnnoyIndex
 
-IMAGE_BASE_PATH = "./ramen_images/"
+IMAGE_BASE_PATH  = "./ramen_images/"
 ANNOY_MODEL_PATH = "./models/ramen.ann"
-ANNOY_DIMENTION = 4096
+ANNOY_DIMENTION  = 4096
 
 # VGG19から中間層を抽出
 base_model = VGG16(weights="imagenet")
@@ -21,7 +21,6 @@ model = Model(inputs=base_model.input, outputs=base_model.get_layer("fc2").outpu
 
 # Annoyのモデルを構築
 annoy_model = AnnoyIndex(ANNOY_DIMENTION)
-
 
 # 画像をベクトルに変換してAnnoyに登録
 for i in range (1, 1001):
